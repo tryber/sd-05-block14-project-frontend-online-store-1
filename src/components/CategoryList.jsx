@@ -16,15 +16,16 @@ class CategoryList extends React.Component {
   }
 
   render() {
-    const allCategories = this.state.categories;
+    const { categories } = this.state;
     return (
       <section className="categories-container">
-        {allCategories.map((category) => (
+        {categories.map((category) => (
           <form key={category.id}>
             <input
               type="checkbox"
-              name="categories-list"
+              name={category.id}
               data-testid="category"
+              onChange={(event) => this.props.handleChange(event.target.name)}
             />
             <label htmlFor="categories-list">{category.name}</label>
           </form>

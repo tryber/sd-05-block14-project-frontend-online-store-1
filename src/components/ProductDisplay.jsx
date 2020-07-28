@@ -5,7 +5,7 @@ class ProductDisplay extends React.Component {
   render() {
     const { id, title, price, thumbnail } = this.props.product;
     return (
-      <div data-testid="product" key={this.props.batatinha}>
+      <div data-testid="product">
         <img src={thumbnail} alt={title} />
         <h4>{title}</h4>
         <p>{id}</p>
